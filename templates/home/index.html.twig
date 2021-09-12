@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!
+{% endblock %}
+
+{% block body %}
+	<!-- Header section -->
+	<header>
+		<h1>
+			<img src="https://www.wildcodeschool.com/assets/logo_main-e4f3f744c8e717f1b7df3858dce55a86c63d4766d5d9a7f454250145f097c2fe.png" alt="Wild Code School logo"/>
+			Les Argonautes
+		</h1>
+	</header>
+
+	<!-- Main section -->
+	<main>
+
+		<!-- New member form -->
+		<h2>Ajouter un(e) Argonaute</h2>
+		<div class="new-member-form">
+			{{ form_start(form) }}
+			{{ form_widget(form) }}
+			<button type="submit">Envoyer</button>
+			{{ form_end(form) }}
+		</div>
+
+		<!-- Member list -->
+		<h2>Membres de l'équipage</h2>
+		<ul class="new-member-form">
+			{% for argonaute in allArgo %}
+				<li>
+					{{ argonaute.name }}
+				</li>
+			{% endfor %}
+		</ul>
+	</main>
+
+	<footer>
+		<p>Réalisé par Jason en Anthestérion de l'an 515 avant JC</p>
+	</footer>
+{% endblock %}
